@@ -1,0 +1,32 @@
+
+type Person {
+  id: ID
+  email: String
+  orders: [Order]!
+}
+
+type Order {
+  id: ID!
+  deliverTime: String
+  person : Person!
+  branch : Branch!
+}
+
+
+type Branch {
+  id: ID!
+  address: String!
+}
+
+
+
+type Query {
+  personById(id: ID): Person!
+  persons : [Person]!
+}
+
+type Mutation {
+    createPerson(email : String):Person!
+    createOrder(person : ID, branch : ID): Order!
+    createBranch(address: String): Branch!
+}

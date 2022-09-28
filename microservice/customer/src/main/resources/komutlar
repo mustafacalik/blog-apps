@@ -1,0 +1,9 @@
+docker-compose up -d
+
+-d in a detached mode
+
+
+docker-compose ps
+
+
+docker-compose exec mongodb /bin/sh

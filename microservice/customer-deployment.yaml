@@ -8,7 +8,7 @@ metadata:
   name: ecommerce-customer
   namespace: default
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: ecommerce-customer
@@ -23,8 +23,9 @@ spec:
         app: ecommerce-customer
     spec:
       containers:
-      - image: ecommerce/customer:0.0.1-SNAPSHOT
+      - image: ecommerce/customer:0.0.4-SNAPSHOT
         #imagePullPolicy: IfNotPresent
+        #imagePullPolicy: Always
         name: ecommerce-customer-service
         env:
         - name: MONGO_HOST

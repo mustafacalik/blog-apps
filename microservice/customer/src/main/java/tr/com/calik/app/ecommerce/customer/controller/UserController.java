@@ -1,5 +1,7 @@
 package tr.com.calik.app.ecommerce.customer.controller;
 
+import org.eclipse.microprofile.config.ConfigProvider;
+import org.eclipse.microprofile.config.inject.ConfigProperty;
 import org.jboss.logging.Logger;
 import tr.com.calik.app.ecommerce.customer.api.BaseResponseModel;
 import tr.com.calik.app.ecommerce.customer.api.ErrorType;
@@ -29,6 +31,7 @@ public class UserController {
     @Inject
     Logger logger;
 
+
     @GET
     @Path("/{email}")
     public Response getUser(String email) throws UserException {
@@ -42,6 +45,8 @@ public class UserController {
         logger.debug("Create user " + userDto);
         return Response.ok().build();
     }
+
+
 
 
 }
